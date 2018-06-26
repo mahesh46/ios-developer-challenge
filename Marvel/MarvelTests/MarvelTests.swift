@@ -15,6 +15,7 @@ class MarvelTests: XCTestCase {
     var homeVC : HomeViewController!
     var detailVC : DetailViewController!
    
+   
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -24,7 +25,7 @@ class MarvelTests: XCTestCase {
         homeVC = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
         detailVC = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         
-        collectionView = homeVC.collectionView
+       
  
         
     }
@@ -75,6 +76,8 @@ class MarvelTests: XCTestCase {
     func testLoadingHomeView() {
          XCTAssertNotNil(homeVC.view)
     }
+    
+   
   
     
 }
