@@ -82,6 +82,24 @@ class MarvelTests: XCTestCase {
         XCTAssertNotNil(homeVC.collectionView)
     }
    
+    func testHomeHasCDatasourse() {
+        homeVC.loadViewIfNeeded()
+        XCTAssertNotNil(homeVC.collectionView.dataSource)
+    }
+    
+    func testHomeHasCDatasourseSet() {
+        homeVC.loadViewIfNeeded()
+        XCTAssertTrue(homeVC.collectionView.dataSource is HomeViewController)
+    }
   
+    func testHomeVCDelegate() {
+        homeVC.loadViewIfNeeded()
+        XCTAssertTrue(homeVC.collectionView.delegate is HomeViewController)
+    }
+    
+    func testHomeVCNoOfsections() {
+        homeVC.loadViewIfNeeded()
+        XCTAssertEqual(homeVC.collectionView.numberOfSections , 1)
+    }
     
 }
