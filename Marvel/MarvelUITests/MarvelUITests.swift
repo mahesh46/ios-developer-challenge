@@ -28,9 +28,20 @@ class MarvelUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+  
+    func testIntialLoadAndSection() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        //test on iphone
+        let app = XCUIApplication()
+        app.collectionViews.children(matching: .cell).element(boundBy: 2).children(matching: .other).element.tap()
+        app.buttons["X"].tap()
+        
+        
+        
     }
+    
+    
     
 }

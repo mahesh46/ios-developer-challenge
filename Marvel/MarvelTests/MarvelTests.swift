@@ -7,13 +7,26 @@
 //
 
 import XCTest
+import UIKit
+
 @testable import Marvel
 
 class MarvelTests: XCTestCase {
-    
+    var homeVC : HomeViewController!
+    var detailVC : DetailViewController!
+   
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        //homeVC =  HomeViewController()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        homeVC = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        detailVC = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        
+        collectionView = homeVC.collectionView
+ 
+        
     }
     
     override func tearDown() {
@@ -32,5 +45,36 @@ class MarvelTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    //test CommicBook model
+    func test_init_takesTitle() {
+        let commicBook = commic(thumbnailUrl: "", title: "Batman", description: "", imageUrl: "")
+        XCTAssertNotNil(commicBook.title,"title should not be nil")
+        
+    }
+    
+    func test_init_whenGivenTitle() {
+        let commicBook = commic(thumbnailUrl: "thunmbnailurl", title: "Batman", description: "batman movie", imageUrl: "imageUrl")
+      
+        XCTAssertEqual(commicBook.title,"Batman","should set tile")
+    }
+    
+    func test_init_whenGivenDescription() {
+        let commicBook = commic(thumbnailUrl: "", title: "", description: "batman movie", imageUrl: "imageUrl")
+        
+        XCTAssertEqual(commicBook.description,"batman movie","should set description")
+    }
+    
+    func test_init_whenGivenThumnaleUrl() {
+        let commicBooK = commic(thumbnailUrl: "http://google.com", title: "", description: "", imageUrl: "")
+        
+        XCTAssertEqual(commicBooK.thumbnailUrl,"http://google.com","should set description")
+    }
+    
+    //test HomeViewController
+    func testLoadingHomeView() {
+         XCTAssertNotNil(homeVC.view)
+    }
+  
     
 }

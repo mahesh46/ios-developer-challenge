@@ -24,6 +24,7 @@
 		C357C61420E135E000B75048 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C357C61320E135E000B75048 /* DetailViewController.swift */; };
 		C357C61720E1386B00B75048 /* ThumbnailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C357C61620E1386B00B75048 /* ThumbnailCollectionViewCell.swift */; };
 		C357C61920E1387700B75048 /* ThumbnailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C357C61820E1387700B75048 /* ThumbnailCollectionViewCell.xib */; };
+		C36EE97020E2703600770F2E /* ThumbnailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C357C61620E1386B00B75048 /* ThumbnailCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -527,6 +528,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C357C5F020E125B100B75048 /* MarvelTests.swift in Sources */,
+				C36EE97020E2703600770F2E /* ThumbnailCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
