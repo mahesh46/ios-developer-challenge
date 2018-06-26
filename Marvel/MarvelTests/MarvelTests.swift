@@ -77,6 +77,10 @@ class MarvelTests: XCTestCase {
          XCTAssertNotNil(homeVC.view)
     }
     
+    func testHomeHasCollectionView() {
+        homeVC.loadViewIfNeeded()
+        XCTAssertNotNil(homeVC.collectionView)
+    }
    
   
     
